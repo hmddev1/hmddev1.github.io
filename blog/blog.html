@@ -1,24 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Hamed Ghaderi</title>
     <link rel="stylesheet" href="blog.css">
+    <!-- !-- Other meta tags and stylesheets --> 
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
 </head>
-<body>
 
+
+<body>
 <div class="blog-container">
-    
-    <!-- <div class="blog-post">
-        <h2 class="blog-title">Second Blog Post</h2>
-        <p class="blog-date">May 5, 2024</p>
+
+    <div class="blog-post">
+        <h2 class="blog-title">How to show a visualize confusion matrix in classification ML algorithms</h2>
+        <p class="blog-date">May 7, 2024</p>
         <div class="blog-content">
-            <p>This is the content of the second blog post. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut magna eu ligula dictum euismod. Nam vel magna semper, faucibus lorem in, dignissim urna. Nulla facilisi. Morbi a enim et est consequat eleifend. Sed dapibus est non diam laoreet, at posuere justo dapibus.</p>
-            <p>Mauris consequat eget nunc sit amet ultricies. Aenean lacinia ipsum ac orci fermentum aliquet. Integer convallis sapien ac justo sodales tempus. Pellentesque nec semper nulla, eu rutrum velit. Nam convallis quam eu lorem fermentum, nec finibus lectus sodales. Donec sit amet semper enim, non cursus nulla.</p>
+            <p>A confusion matrix is a special kind of contingency table, with two dimensions ("actual" and "predicted"), and identical sets of "classes" in both dimensions (each combination of dimension and class is a cell in the matrix). 
+                It is an N x N matrix used for evaluating the performance of a classification model, where N is the number of target classes. By definition, a confusion matrix C is such that C[i,j] is equal to the number of observations known to be in group i and predicted to be in group j. 
+                You can use the \sklearn.metrics.confusion_matrix\ function in Python to create a confusion matrix for a given classification model.
+            </p>
+            <p>
+                This article provides a code with which you can display the confusion matrix as an illustrated plot with better details.
+            </p>
+            <p>
+                ConfusionMatrixDisplay is a class in the sklearn.metrics library which can be used to plot a confusion matrix, with added matplotlib.text.Text objects for evaluation measures such as accuracy, precision, recall, and f1 score. 
+                Here is an example of how to use ConfusionMatrixDisplay for plotting a confusion matrix in Scikit-learn:
+            </p>
+            <pre class="language-python">
+                <code>
+                    from sklearn.metrics import confusion_matrix
+                    from sklearn.metrics import ConfusionMatrixDisplay
+
+                    titles_options = [("Confusion matrix")]
+                    target_names=["class1", "class2", "class3"]
+
+                    conf = confusion_matrix(y_test, prediction)
+                    for title in titles_options:
+                        disp = ConfusionMatrixDisplay.from_estimator(model,X_test,y_test,display_labels=target_names,cmap=plt.cm.Blues)
+                        disp.ax_.set_title(title)
+                        print(title)
+                        print(disp.confusion_matrix)
+
+                    plt.show()
+                </code>
+            </pre>
+
+            <p>
+                The plot will show the confusion matrix and evaluation measures like accuracy, precision, recall, and f1 score.
+                This is an example of the confusion matrix visualization for three classes:
+            </p>
+
+            <figure>
+                <img src="blog/Astronomy.jpg" alt="Classification confusion matrix of three classes example (Image from scikit-learn.org)">
+                <figcaption>Classification confusion matrix of three classes example (Image from scikit-learn.org)</figcaption>
+            </figure>
         </div>
         <hr>
-    </div> -->
+    </div>
 
     <div class="blog-post">
         <h2 class="blog-title">The perpose</h2>
