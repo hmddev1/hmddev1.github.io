@@ -1,0 +1,56 @@
+/* blog.css */
+
+/* Reset default margin and padding */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set font family and size */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Container for blog posts */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for individual blog posts */
+.blog-post {
+    margin-bottom: 30px;
+}
+
+/* Title of blog post */
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Date of blog post */
+.blog-date {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* Content of blog post */
+.blog-content {
+    line-height: 1.6;
+}
+
+/* Links inside blog content */
+.blog-content a {
+    color: #007bff;
+}
+
+/* Style for horizontal rule */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
