@@ -1,0 +1,2 @@
+/* Shim: ensure posts can load the stylesheet regardless of href path */
+@import url('../post-style.css');

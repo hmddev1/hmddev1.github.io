@@ -1,0 +1,79 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hamed Ghaderi</title>
+    <link rel="stylesheet" href="blog-landing.css">
+</head>
+<body>
+<div class="blog-landing-container">
+    <header class="blog-header">
+        <div class="header-content">
+            <h1 class="blog-author-name">Blog</h1>
+            <a href="/" class="home-button">← Back to Home</a>
+        </div>
+    </header>
+
+    <main class="blog-main">
+        <section class="blog-section">
+            <div class="blog-grid">
+                <!-- Blog Post Card 1 -->
+                <article class="blog-card">
+                    <div class="card-media"></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Maximizing Model Performance</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-excerpt">Learn how to identify false prediction labels in classification machine learning models and improve your classifier's accuracy.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-date">May 8, 2024</span>
+                        <a href="posts/false-prediction-labels.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post Card 2 -->
+                <article class="blog-card">
+                    <div class="card-media"></div>
+                    <div class="card-header">
+                        <h3 class="card-title">Confusion Matrix Visualization</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-excerpt">Explore how to create and visualize confusion matrices using scikit-learn for evaluating classification model performance.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-date">May 7, 2024</span>
+                        <a href="posts/confusion-matrix.html" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post Card 3 -->
+                <article class="blog-card">
+                    <div class="card-media"></div>
+                    <main class="blog-main">
+                        <section class="blog-section">
+                            <div class="blog-grid" data-excerpt-chars="180">
+                                {% assign post_pages = site.pages | where_exp: 'p', "p.path contains 'blog/posts/'" %}
+                                {% assign post_pages = post_pages | sort: 'date' | reverse %}
+                                {% for p in post_pages %}
+                                <article class="blog-card">
+                                    <div class="card-media"></div>
+                                    <div class="card-header">
+                                        <h3 class="card-title">{{ p.title | default: p.name | split: '.' | first | replace: '-', ' ' | capitalize }}</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="card-excerpt"></p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <span class="card-date">{% if p.date %}{{ p.date | date: "%B %-d, %Y" }}{% endif %}</span>
+                                        <a href="{{ p.url | relative_url }}" class="read-more">Read More →</a>
+                                    </div>
+                                </article>
+                                {% endfor %}
+                            </div>
+                        </section>
+                    </main>

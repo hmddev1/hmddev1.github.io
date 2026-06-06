@@ -1,0 +1,36 @@
+/* overrides.css — responsive container & standardized horizontal spacing */
+:root {
+  --container-max: 1280px;
+  --page-pad: 1.25rem; /* mobile default */
+}
+
+@media (min-width: 768px) {
+  :root { --page-pad: 2rem; } /* tablet & desktop */
+}
+
+/* Apply consistent horizontal padding + max-width */
+.header-content,
+.blog-main,
+.blog-footer > .footer-content,
+.blog-footer > p { /* fallback if footer-content wrapper not present */
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+}
+
+/* Remove duplicate horizontal padding from wrappers */
+.blog-header,
+.blog-main,
+.blog-footer {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Ensure main still has vertical rhythm */
+.blog-main {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
